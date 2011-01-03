@@ -1,9 +1,5 @@
 #summary Getting started with AidedSudoku
 
-= Introduction =
-
-The goal is that this page will take you from nothing to running AidedSudoku in an emulator in just a few steps.
-
 = Steps =
 
   # Install [http://labs.adobe.com/technologies/flashbuilder_burrito/ AdodeFlexBuilder]
