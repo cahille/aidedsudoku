@@ -6,7 +6,7 @@ The goal is that this page will take you from nothing to running AidedSudoku in 
 
 = Steps =
 
-  # Install http://labs.adobe.com/technologies/flashbuilder_burrito/ AdodeFlexBuilder
+  # Install [http://labs.adobe.com/technologies/flashbuilder_burrito/ AdodeFlexBuilder]
   # Install a Subversion client.  For Windows, we suggest [http://tortoisesvn.net/downloads.html Tortoise]
   # Check out the source.  In windows explorer, browse to where you would like your source to live.  Right-click and select SVN Checkout....  For the "URL of the repository" enter https://aidedsudoku.googlecode.com/svn/trunk/AidedSudokuFlex, leave the defaults and click "OK".
   # After opening Burrito, click File->Import->General->Existing Projects into Workspace.  In "Select root directory" browse to the checked out source.  Click "Finish".
