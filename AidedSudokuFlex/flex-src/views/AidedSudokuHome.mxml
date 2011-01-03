@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009"
+		xmlns:s="library://ns.adobe.com/flex/spark"
+		title="Aided Sudoku" creationComplete="init();">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<s:titleContent>
+		<s:TextInput width="100%" name="myTitle" fontSize="36" text="Aided Sudoku" horizontalCenter="0"/>
+	</s:titleContent>
+	
+	<s:TileGroup y="15" columnWidth="30" horizontalAlign="center" horizontalGap="2"
+				 name="gameGrid" rowHeight="30" styleName="gamegrid" textAlign="center"
+				 verticalGap="2">
+		<s:TextInput restrict="1-9" styleName="odd" name="box0"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box1"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box2"/>
+		<s:TextInput restrict="1-9" styleName="even" name="box3"/>
+		<s:TextInput restrict="1-9" styleName="even" name="box4"/>
+		<s:TextInput restrict="1-9" styleName="even" name="box5"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box6"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box7"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box8"/>
+		
+		<s:TextInput restrict="1-9" styleName="odd" name="box9"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box10"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box11"/>
+		<s:TextInput restrict="1-9" styleName="even" name="box12"/>
+		<s:TextInput restrict="1-9" styleName="even" name="box13"/>
+		<s:TextInput restrict="1-9" styleName="even" name="box14"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box15"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box16"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box17"/>
+		
+		<s:TextInput restrict="1-9" styleName="odd" name="box18"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box19"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box20"/>
+		<s:TextInput restrict="1-9" styleName="even" name="box21"/>
+		<s:TextInput restrict="1-9" styleName="even" name="box22"/>
+		<s:TextInput restrict="1-9" styleName="even" name="box23"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box24"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box25"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box26"/>
+		
+		<s:TextInput restrict="1-9" styleName="even" name="box27"/>
+		<s:TextInput restrict="1-9" styleName="even" name="box28"/>
+		<s:TextInput restrict="1-9" styleName="even" name="box29"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box30"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box31"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box32"/>
+		<s:TextInput restrict="1-9" styleName="even" name="box33"/>
+		<s:TextInput restrict="1-9" styleName="even" name="box34"/>
+		<s:TextInput restrict="1-9" styleName="even" name="box35"/>
+		
+		<s:TextInput restrict="1-9" styleName="even" name="box36"/>
+		<s:TextInput restrict="1-9" styleName="even" name="box37"/>
+		<s:TextInput restrict="1-9" styleName="even" name="box38"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box39"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box40"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box41"/>
+		<s:TextInput restrict="1-9" styleName="even" name="box42"/>
+		<s:TextInput restrict="1-9" styleName="even" name="box43"/>
+		<s:TextInput restrict="1-9" styleName="even" name="box44"/>
+		
+		<s:TextInput restrict="1-9" styleName="even" name="box45"/>
+		<s:TextInput restrict="1-9" styleName="even" name="box46"/>
+		<s:TextInput restrict="1-9" styleName="even" name="box47"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box48"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box49"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box50"/>
+		<s:TextInput restrict="1-9" styleName="even" name="box51"/>
+		<s:TextInput restrict="1-9" styleName="even" name="box52"/>
+		<s:TextInput restrict="1-9" styleName="even" name="box53"/>
+		
+		<s:TextInput restrict="1-9" styleName="odd" name="box54"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box55"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box56"/>
+		<s:TextInput restrict="1-9" styleName="even" name="box57"/>
+		<s:TextInput restrict="1-9" styleName="even" name="box58"/>
+		<s:TextInput restrict="1-9" styleName="even" name="box59"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box60"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box61"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box62"/>
+		
+		<s:TextInput restrict="1-9" styleName="odd" name="box63"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box64"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box65"/>
+		<s:TextInput restrict="1-9" styleName="even" name="box66"/>
+		<s:TextInput restrict="1-9" styleName="even" name="box67"/>
+		<s:TextInput restrict="1-9" styleName="even" name="box68"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box69"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box70"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box71"/>
+		
+		<s:TextInput restrict="1-9" styleName="odd" name="box72"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box73"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box74"/>
+		<s:TextInput restrict="1-9" styleName="even" name="box75"/>
+		<s:TextInput restrict="1-9" styleName="even" name="box76"/>
+		<s:TextInput restrict="1-9" styleName="even" name="box77"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box78"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box79"/>
+		<s:TextInput restrict="1-9" styleName="odd" name="box80"/>
+	</s:TileGroup>
+	
+	<s:HGroup y="324" height="30" click="myHelperHandler(event)" columnWidth="30" gap="2"
+			  horizontalCenter="0" name="helperGrid" styleName="helper">
+		<s:TextInput width="30" height="30" name="helper1" text="1" editable="false"/>
+		<s:TextInput width="30" height="30" name="helper2" text="2" editable="false"/>
+		<s:TextInput width="30" height="30" name="helper3" text="3" editable="false"/>
+		<s:TextInput width="30" height="30" name="helper4" text="4" editable="false"/>
+		<s:TextInput width="30" height="30" name="helper5" text="5" editable="false"/>
+		<s:TextInput width="30" height="30" name="helper6" text="6" editable="false"/>
+		<s:TextInput width="30" height="30" name="helper7" text="7" editable="false"/>
+		<s:TextInput width="30" height="30" name="helper8" text="8" editable="false"/>
+		<s:TextInput width="30" height="30" name="helper9" text="9" editable="false"/>
+	</s:HGroup>
+	<s:HGroup y="359" columnWidth="30" gap="2" name="remainingGrid"
+			  styleName="remaining">
+		<s:TextInput width="30" height="30" enabled="false" name="remaining0" styleName="remaining"/>
+		<s:TextInput width="30" height="30" enabled="false" name="remaining1" styleName="remaining"/>
+		<s:TextInput width="30" height="30" enabled="false" name="remaining2" styleName="remaining"/>
+		<s:TextInput width="30" height="30" enabled="false" name="remaining3" styleName="remaining"/>
+		<s:TextInput width="30" height="30" enabled="false" name="remaining4" styleName="remaining"/>
+		<s:TextInput width="30" height="30" enabled="false" name="remaining5" styleName="remaining"/>
+		<s:TextInput width="30" height="30" enabled="false" name="remaining6" styleName="remaining"/>
+		<s:TextInput width="30" height="30" enabled="false" name="remaining7" styleName="remaining"/>
+		<s:TextInput width="30" height="30" enabled="false" name="remaining8" styleName="remaining"/>
+	</s:HGroup>
+	<s:HGroup y="422" name="remainingRow" styleName="helper">
+		<s:TextInput height="30" enabled="false" name="remaining" styleName="remaining"/>
+	</s:HGroup>
+	<s:HGroup y="462" gap="2" name="checkRow" styleName="helper">
+		<s:Button height="30" label="check" click="myCheckHandler(event)"
+				  name="check" styleName="remaining"/>
+	</s:HGroup>
+	<fx:Script><![CDATA[
+		import com.aidedsudoku.Puzzle;
+		
+		import mx.collections.ArrayCollection;
+		import mx.collections.ArrayList;
+		
+		private var maxIndex : Number = 80;
+		private var PUZZLE : String;
+		private var ANSWER : String;
+		private var gameGrid : TileGroup;
+		private var regions : Array = [];
+		private var highlighted : Array = [];
+		private var remaining : Array = [];
+		private var helped : Number = -1;
+		private var oddHighlight : String = "#aaabbb";
+		private var evenHighlight : String = "#cccddd";
+		private var winnerHighlight : String = "#ff0000";
+		private var helperHighlight : String = "#ff00ff";
+		private var errorHighlight : String = winnerHighlight;		
+		private function setRegions() : void {
+			regions.push([0, 1, 2, 3, 4, 5, 6, 7, 8]);
+			regions.push([9, 10, 11, 12, 13, 14, 15, 16, 17]);
+			regions.push([18, 19, 20, 21, 22, 23, 24, 25, 26]);
+			regions.push([27, 28, 29, 30, 31, 32, 33, 34, 35]);
+			regions.push([36, 37, 38, 39, 40, 41, 42, 43, 44]);
+			regions.push([45, 46, 47, 48, 49, 50, 51, 52, 53]);
+			regions.push([54, 55, 56, 57, 58, 59, 60, 61, 62]);
+			regions.push([63, 64, 65, 66, 67, 68, 69, 70, 71]);
+			regions.push([72, 73, 74, 75, 76, 77, 78, 79, 80]);
+			regions.push([0, 9, 18, 27, 36, 45, 54, 63, 72]);
+			regions.push([1, 10, 19, 28, 37, 46, 55, 64, 73]);
+			regions.push([2, 11, 20, 29, 38, 47, 56, 65, 74]);
+			regions.push([3, 12, 21, 30, 39, 48, 57, 66, 75]);
+			regions.push([4, 13, 22, 31, 40, 49, 58, 67, 76]);
+			regions.push([5, 14, 23, 32, 41, 50, 59, 68, 77]);
+			regions.push([6, 15, 24, 33, 42, 51, 60, 69, 78]);
+			regions.push([7, 16, 25, 34, 43, 52, 61, 70, 79]);
+			regions.push([8, 17, 26, 35, 44, 53, 62, 71, 80]);
+			regions.push([0, 1, 2, 9, 10, 11, 18, 19, 20]);
+			regions.push([3, 4, 5, 12, 13, 14, 21, 22, 23]);
+			regions.push([6, 7, 8, 15, 16, 17, 24, 25, 26]);
+			regions.push([27, 28, 29, 36, 37, 38, 45, 46, 47]);
+			regions.push([30, 31, 32, 39, 40, 41, 48, 49, 50]);
+			regions.push([33, 34, 35, 42, 43, 44, 51, 52, 53]);
+			regions.push([54, 55, 56, 63, 64, 65, 72, 73, 74]);
+			regions.push([57, 58, 59, 66, 67, 68, 75, 76, 77]);
+			regions.push([60, 61, 62, 69, 70, 71, 78, 79, 80]);
+		}
+		
+		private function init() : void {
+			setRegions();
+			gameGrid = this.getChildByName("gameGrid") as TileGroup;
+			for(var i : Number=0;i<=maxIndex;i++) {
+				highlighted[i] = false;
+			}
+			populate(getPuzzle());
+		}
+		
+		private function getPuzzle() : Puzzle {
+		    var puzzles : ArrayCollection = new ArrayCollection;
+			puzzles.addItem(new Puzzle("....26..........5...843...7.912.......4.973...2.....48.8..71.........5.4.1.9....3", "147526839936718452258439167891243675564897321723165948485371296379682514612954783"));
+			puzzles.addItem(new Puzzle("52.........6.......1...7.2.6..........4..37.88.......4.....25.....51.8....937.4.1", "523186947746239185918457326675841239194623758832795614481962573367514892259378461"));
+			puzzles.addItem(new Puzzle(".9....36.....54....58.6........81......42..8......59.4.342...9...9....3221...8..7", "491872365623954718758163249945781623367429581182635974534217896879546132216398457"));
+			puzzles.addItem(new Puzzle("5....1.....98.31..2.3.....4....786....1......38......21.........6..5.79....962...", "578641329649823157213795864954278631721436985386519472195387246862154793437962518"));
+			puzzles.addItem(new Puzzle("..........4.5.......3.9.....3...1.4.916..8.5.5...3.2......2......281.4.3..5..39.2", "827364195149582736653197824238751649916248357574936281361429578792815463485673912"));
+			puzzles.addItem(new Puzzle("...5..2.....8..1..3....67.............57....3..1.2.....834.7.6.9....5.244...9....", "178539246564872139392146758749358612825761493631924587283417965917685324456293871"));
+			puzzles.addItem(new Puzzle(".79..4......2.9.....436..2....5.2......91.58...7.8.....6....7.8....93...1.3......", "279854361631279845854361927498532176326917584517486293962145738785693412143728659"));
+			puzzles.addItem(new Puzzle(".8....6.......1..84............2....8.....19.92..36..7.....9.4.6.4.7....1934.....", "582397614369241758417685239741928563836754192925136487278519346654873921193462875"));
+			puzzles.addItem(new Puzzle("..1.......5..63....94..83.18......35.4........6.5...9......64.8.35..96.7....2....", "321974586758163249694258371819642735543897162267531894972316458135489627486725913"));
+			puzzles.addItem(new Puzzle("........25.43.....2..7.1..3..3.8..6.4.12............8.3.......9...1...7...7.4.8.1", "136894752574326918298751643723985164481267395659413287315678429842139576967542831"));
+			puzzles.addItem(new Puzzle("5...7.4....3..82....8.9..676......2....92..71.8.4..5..1..7.2....2........4.......", "562371498793648215418295367671853924354926871289417536135782649927564183846139752"));
+			puzzles.addItem(new Puzzle("....2...1.....96.8...8.........6.....361.78....1...35..43..2.6...2.5649..7.......", "384625971157439628269871534428563719536197842791248356943782165812356497675914283"));
+			return puzzles.getItemAt(Math.random() * puzzles.length) as Puzzle;
+		}
+		 
+		private function populate(puzzle : Puzzle):void {
+			PUZZLE = puzzle.getPuzzle();
+			ANSWER = puzzle.getAnswer();
+			for(var i : Number=0;i<=maxIndex;i++) {
+				var character : String = PUZZLE.substr(i, 1);
+				if(character != ".") {
+					var name : String = "box" + i;
+					var textInput : TextInput = gameGrid.getChildByName(name) as TextInput;
+					textInput.text = character;
+					textInput.enabled = false;
+				}
+			}
+			
+			populateRemaining();
+		}
+		
+		private function populateRemaining() : void {
+			var i : Number;
+			var textInput : TextInput;
+			var totalRemaining : Number = maxIndex + 1;
+			for(i=0;i<9;i++) {
+				remaining[i] = 9;
+			}
+			
+			var remainingGrid : HGroup = this.getChildByName("remainingGrid") as HGroup;
+			
+			for(i=0;i<=maxIndex;i++) {
+				textInput = gameGrid.getChildByName("box" + i) as TextInput;
+				if(textInput.text.length == 1) {
+					remaining[parseInt(textInput.text)-1]--;
+					totalRemaining--;
+				}
+			}
+			
+			for(i=0;i<remaining.length;i++) {
+				textInput = remainingGrid.getChildByName("remaining" + i) as TextInput;
+				textInput.text = remaining[i];
+			}
+			
+			var remainingRow : HGroup = this.getChildByName("remainingRow") as HGroup;
+			textInput = remainingRow.getChildByName("remaining") as TextInput;
+			textInput.text = "Total remaining: " + totalRemaining.toString();
+		}
+		
+		private function myHelperHandler(event : Event) : void {
+			var string : String = event.target.toString();
+			var number : Number = parseInt(event.target.text);
+			helpOut(number);
+			populateRemaining();
+		}
+		
+		private function myCheckHandler(event : Event) : void {
+			for(var i : Number=0;i<=maxIndex;i++) {
+				highlightTextInput(i, false);
+				var textInput : TextInput = gameGrid.getChildByName("box" + i) as TextInput;
+				var actual : Number = parseInt(textInput.text)
+				
+				var expected : Number = parseInt(ANSWER.substr(i, 1));
+				if(actual && actual != expected) {
+					textInput.setStyle("contentBackgroundColor", errorHighlight);
+				}
+			}
+		}
+		
+		private function highlightSingles(highlight : Boolean) : void {
+			for(var i : Number=0;i<=maxIndex;i++) {
+				var textInput : TextInput = gameGrid.getChildByName("box" + i) as TextInput;
+				if(textInput.text.length == 1) {
+					highlightTextInput(i, highlight);
+				}
+			}
+		}
+		
+		private function helpOut(number : Number) : void {
+			if(helped == -1) {
+				helpOutProper(number, true);
+				helped = number;
+			} else if(helped == number) {
+				helpOutProper(number, false);
+				helped = -1;
+			} else {
+				helpOutProper(helped, false);
+				helpOutProper(number, true);
+				helped = number;
+			}
+		}
+		
+		private function numberInRegion(number : Number, region : Array) : Boolean {
+			for(var i : Number=0;i<region.length;i++) {
+				var textInput : TextInput = gameGrid.getChildByName("box" + region[i]) as TextInput;
+				
+				if(number == parseInt(textInput.text)) {
+					return true;
+				}
+			}
+			return false;
+		}
+		
+		private function helpOutProper(number : Number, highlight : Boolean) : void {	
+			var helperGrid : HGroup = this.getChildByName("helperGrid") as HGroup;
+			var textInput : TextInput = helperGrid.getChildByName("helper" + number) as TextInput;			
+			if(highlight) {
+				textInput.setStyle("contentBackgroundColor", helperHighlight);
+			} else {
+				textInput.clearStyle("contentBackgroundColor");
+			}
+			
+			for(var i : Number=0;i<regions.length;i++) {
+				var region : Array = regions[i];
+				if(numberInRegion(number, region)) {
+					for(var j : Number=0;j<region.length;j++) {
+						highlightTextInput(region[j], highlight);
+					}
+				} 
+			}
+			highlightSingles(highlight);
+			if(highlight) {
+				highlightWinners();
+			} else {
+				for(var k : Number=0;k<=maxIndex;k++) {
+					highlightTextInput(k, false);
+				}
+			}
+		}
+		
+		private function highlightWinners() : void {
+			for(var i : Number=0;i<regions.length;i++) {
+				var region : Array = regions[i];
+				var winner : Number = -1;
+				for(var j : Number=0;j<region.length;j++) {
+					if(!highlighted[region[j]]) {
+						if(winner >= 0) {
+							winner = -1;
+							break;
+						} else {
+							winner = region[j];
+						}
+					}
+				}
+				
+				if(winner >= 0) {
+					var textInput : TextInput = gameGrid.getChildByName("box" + winner) as TextInput;
+					textInput.setStyle("contentBackgroundColor", winnerHighlight); 
+				}
+			}			
+		}
+		
+		private function highlightTextInput(position : Number, highlight : Boolean) : void {
+			highlighted[position] = highlight;
+			var name : String = "box" + position;
+			var textInput : TextInput = gameGrid.getChildByName(name) as TextInput;
+			if(highlight) {
+				var styleName : String = textInput.styleName as String;
+				var highlightColor : String = styleName == "odd" ? oddHighlight : evenHighlight;
+				textInput.setStyle("contentBackgroundColor", highlightColor); 
+			} else {
+				textInput.clearStyle("contentBackgroundColor");
+			}
+		}
+	]]>
+	</fx:Script>
+</s:View>

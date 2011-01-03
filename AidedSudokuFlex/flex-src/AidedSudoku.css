@@ -1,0 +1,37 @@
+/* CSS file */
+@namespace s "library://ns.adobe.com/flex/spark";
+
+global
+{
+	text-align: center;
+	color: #FFFFFF;
+}
+.gamegrid
+{
+	horizontal-center: 0;
+	font-size: 18;
+}
+.odd
+{
+	content-background-color: #fffffe;
+	text-align: center;
+	color: #000000;
+}
+.even
+{
+	content-background-color: #eeeeee;
+	text-align: center;
+	color: #000000;
+}
+.helper
+{
+	color: #000000;
+	chrome-color: #FFFFFF;
+	horizontal-center: 0;
+	font-size: 18;
+}
+.remaining
+{
+	font-size: 18;
+	horizontal-center: 0;
+}
