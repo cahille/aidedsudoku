@@ -133,6 +133,14 @@
 	<s:HGroup y="462" gap="2" name="checkRow" styleName="helper">
 		<s:Button height="30" label="check" click="myCheckHandler(event)"
 				  name="check" styleName="remaining"/>
+		<s:Button height="30" label="autoplay once" click="myAutoPlayOnceHandler(event)"
+				  name="autoplayonce" styleName="remaining"/>
+		<s:Button height="30" label="autoplay" click="myAutoPlayHandler(event)"
+				  name="autoplay" styleName="remaining"/>
+	</s:HGroup>
+	<s:HGroup y="494" gap="2" styleName="helper">
+		<s:Button height="30" label="new game" click="populate(getPuzzle())"
+				  name="new game" styleName="remaining"/>
 	</s:HGroup>
 	<fx:Script><![CDATA[
 		import com.aidedsudoku.Puzzle;
@@ -213,12 +221,14 @@
 			PUZZLE = puzzle.getPuzzle();
 			ANSWER = puzzle.getAnswer();
 			for(var i : Number=0;i<=maxIndex;i++) {
+				var name : String = "box" + i;
+				var textInput : TextInput = gameGrid.getChildByName(name) as TextInput;
+
 				var character : String = PUZZLE.substr(i, 1);
-				if(character != ".") {
-					var name : String = "box" + i;
-					var textInput : TextInput = gameGrid.getChildByName(name) as TextInput;
-					textInput.text = character;
-					textInput.enabled = false;
+				if(character == ".") {
+					textInput.text = "";
+				} else {
+					textInput.text = character;					textInput.enabled = false;
 				}
 			}
 			
@@ -260,6 +270,35 @@
 			populateRemaining();
 		}
 		
+		private function myAutoPlayHandler(event : Event) : void {
+			var loop : Boolean = true;
+			while(loop) {
+				var winners : ArrayCollection = myAutoPlayOnceHandler(event);
+				if(winners.length == 0) {
+					loop = false;
+				}
+			}
+		}
+		private function myAutoPlayOnceHandler(event : Event) : ArrayCollection {
+			var totalWinners : ArrayCollection = new ArrayCollection;
+			for(var i : Number=1;i<=9;i++) {
+				var winners : ArrayCollection = helpOut(i);
+				totalWinners.addAll(winners);
+				for(var j : Number=0;j<winners.length;j++) {
+					var textInput : TextInput = gameGrid.getChildByName("box" + winners.getItemAt(j)) as TextInput;
+					textInput.text = i.toString();
+					j.toString();
+				}
+			}
+			helpOut(9);
+			for(i=0;i<=maxIndex;i++) {
+				highlightTextInput(i, false);
+			}
+			populateRemaining();
+			
+			return totalWinners;
+		}
+
 		private function myCheckHandler(event : Event) : void {
 			for(var i : Number=0;i<=maxIndex;i++) {
 				highlightTextInput(i, false);
@@ -282,18 +321,21 @@
 			}
 		}
 		
-		private function helpOut(number : Number) : void {
+		private function helpOut(number : Number) : ArrayCollection {
+			var winners : ArrayCollection = new ArrayCollection;
 			if(helped == -1) {
-				helpOutProper(number, true);
+				winners = helpOutProper(number, true);
 				helped = number;
 			} else if(helped == number) {
 				helpOutProper(number, false);
 				helped = -1;
 			} else {
 				helpOutProper(helped, false);
-				helpOutProper(number, true);
+				winners = helpOutProper(number, true);
 				helped = number;
 			}
+			
+			return winners;
 		}
 		
 		private function numberInRegion(number : Number, region : Array) : Boolean {
@@ -307,7 +349,7 @@
 			return false;
 		}
 		
-		private function helpOutProper(number : Number, highlight : Boolean) : void {	
+		private function helpOutProper(number : Number, highlight : Boolean) : ArrayCollection {	
 			var helperGrid : HGroup = this.getChildByName("helperGrid") as HGroup;
 			var textInput : TextInput = helperGrid.getChildByName("helper" + number) as TextInput;			
 			if(highlight) {
@@ -325,16 +367,21 @@
 				} 
 			}
 			highlightSingles(highlight);
+			var winners :ArrayCollection = new ArrayCollection;
 			if(highlight) {
-				highlightWinners();
+				winners = highlightWinners();
 			} else {
 				for(var k : Number=0;k<=maxIndex;k++) {
 					highlightTextInput(k, false);
 				}
 			}
+			
+			return winners;
 		}
 		
-		private function highlightWinners() : void {
+		private function highlightWinners() : ArrayCollection {
+			var winners : ArrayCollection = new ArrayCollection();
+			
 			for(var i : Number=0;i<regions.length;i++) {
 				var region : Array = regions[i];
 				var winner : Number = -1;
@@ -351,9 +398,13 @@
 				
 				if(winner >= 0) {
 					var textInput : TextInput = gameGrid.getChildByName("box" + winner) as TextInput;
-					textInput.setStyle("contentBackgroundColor", winnerHighlight); 
+					textInput.setStyle("contentBackgroundColor", winnerHighlight);
+					
+					winners.addItem(winner);
 				}
 			}			
+			
+			return winners;
 		}
 		
 		private function highlightTextInput(position : Number, highlight : Boolean) : void {
